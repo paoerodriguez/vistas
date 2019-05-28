@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<LINK REL=StyleSheet HREF="estiloinicio.css" TYPE="text/css" MEDIA=screen> 
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Inicio', this, '#580000')">INICIO</button>
+<button class="tablink" onclick="openPage('Sedes', this, '#6b0000')" id="defaultOpen">SEDES</button>
+<button class="tablink" onclick="openPage('ProximosEstrenos', this, '#7f0000')">PRÓXIMOS ESTRENOS</button>
+<button class="tablink" onclick="openPage('Cartelera', this, '#920000')">CARTELERA</button>
+
+<div id="Inicio" class="tabcontent">
+  <h3>INICIO</h3>
+  <p>Home is where the heart is..</p>
+</div>
+
+<div id="Sedes" class="tabcontent">
+  <h3>SEDES</h3>
+  <p>Some news this fine day!</p> 
+</div>
+
+<div id="ProximosEstrenos" class="tabcontent">
+  <h3>PRÓXIMOS ESTRENOS</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="Cartelera" class="tabcontent">
+  <h3>CARTELERA</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
